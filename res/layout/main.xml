@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="fill_parent"
+    android:padding="15dp" android:layout_height="fill_parent">
+
+    <TextView android:layout_width="fill_parent" android:id="@+id/title"
+        android:gravity="center" android:textStyle="bold"
+        android:layout_height="wrap_content" android:text="@string/app_name"
+        android:textSize="18dp" />
+    <ScrollView android:layout_below="@+id/title"
+        android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TableLayout android:orientation="horizontal"
+            android:shrinkColumns="0" android:stretchColumns="1"
+            android:layout_width="fill_parent" android:paddingTop="10dp"
+            android:layout_height="wrap_content">
+            <TableRow>
+                <TextView android:text="Loan Amount" android:paddingLeft="10dp"
+                    android:layout_weight="1" />
+                <EditText android:digits="1234567890." android:inputType="phone"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp" android:id="@+id/loan"
+                    android:layout_weight="3" android:minEms="6" />
+            </TableRow>
+            <TableRow>
+                <TextView android:text="Interest (% APR)"
+                    android:paddingLeft="10dp" android:layout_weight="1" />
+                <EditText android:digits="1234567890." android:id="@+id/interest"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp" android:inputType="phone"
+                    android:layout_weight="3" />
+            </TableRow>
+            <TableRow>
+                <TextView android:text="Term (Months)" android:paddingLeft="10dp"
+                    android:layout_weight="1" />
+                <EditText android:digits="1234567890." android:id="@+id/num"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp" android:inputType="phone"
+                    android:layout_weight="3" />
+            </TableRow>
+
+            <TableRow>
+                <Button android:text="Reset" android:layout_weight="1"
+                    android:onClick="reset" android:layout_width="wrap_content" />
+                <Button android:text="Calculate" android:onClick="calc"
+                    android:layout_marginLeft="10dp" android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" android:layout_weight="3" />
+            </TableRow>
+
+            <TableRow>
+                <TextView android:text="Loan Charge" android:paddingTop="20dp"
+                    android:paddingLeft="10dp" android:textSize="16dp"
+                    android:layout_weight="1" />
+                <TextView android:id="@+id/charge" android:textSize="16dp"
+                    android:paddingRight="10dp" android:layout_weight="3"
+                    android:gravity="right" />
+            </TableRow>
+
+            <TableRow>
+                <TextView android:text="Total Repayment"
+                    android:paddingTop="20dp" android:paddingLeft="10dp"
+                    android:textSize="16dp" android:layout_weight="1" />
+                <TextView android:id="@+id/total" android:textSize="16dp"
+                    android:paddingRight="10dp" android:layout_weight="3"
+                    android:gravity="right|center_vertical" />
+            </TableRow>
+
+            <TableRow>
+                <TextView android:text="Monthly Repayments"
+                    android:textStyle="bold" android:paddingTop="15dp"
+                    android:paddingLeft="10dp" android:textSize="20dp"
+                    android:layout_weight="1" />
+                <TextView android:id="@+id/repayment" android:textSize="20dp"
+                    android:paddingRight="10dp" android:layout_weight="3"
+                    android:gravity="right|center_vertical" />
+            </TableRow>
+
+        </TableLayout>
+    </ScrollView>
+</RelativeLayout>
